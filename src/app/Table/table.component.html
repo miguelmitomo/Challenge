@@ -1,0 +1,35 @@
+<div class="select">
+  <select [(ngModel)]="selectedFormat" name="select">
+    <option *ngFor="let option of formatNifService.formatOptions" [value]="option.value">{{option.text}}</option>
+  </select>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="table">
+      <table *ngIf="dataService.data.length > 0">
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Foto</th>
+          <th>NIF</th>
+        </tr>
+        <tr *ngFor="let person of dataService.data">
+          <td>{{ person.name }}</td>
+          <td>{{ person.age }}</td>
+          <td>
+            <img
+              [src]="person.photo"
+              alt="No Photo"
+              width="82"
+              height="82"
+              style="vertical-align: center"
+            />
+          </td>
+          <td [formatNif]="person.nif" [formatType]="selectedFormat">{{ person.nif }}</td>
+        </tr>
+      </table>
+      <div></div>
+    </div>
+  </div>
+</div>

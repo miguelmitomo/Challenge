@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="form-group ">
+          <label for="user">Usuario</label>
+          <input formControlName="username" id="user" class="form-control">
+          <span class="error" *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">El nombre de usuario es requerido</span>
+        </div>
+        <div class="lMargin form-group has-error">
+          <label for="password">Password</label>
+          <input formControlName="password" type="password" id="password" class="form-control">
+          <span class="error" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">La contraseña es requerida</span>
+        </div>
+        <div>
+          <button [disabled]="!loginForm.valid" type="submit" class="lMargin btn btn-primary">
+            Log In
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,28 @@
+th {
+  background-color: #2196F3;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  text-align: center;
+}
+
+td{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.table{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.select{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
